@@ -16,14 +16,15 @@ public class Main
 		VendingMachine drink = new VendingMachine("Drink");
 		VendingMachine office = new VendingMachine("Office");
 
-		Snack chips = new Snack("Chips", 36, 1.75, 0);
-		Snack chocolateBar = new Snack("Chocolate Bar", 36, 1.00, 0);
-		Snack pretzel = new Snack("Pretzel", 30, 2.00, 0);
-		Snack soda = new Snack("Soda", 24, 2.50, 1);
-		Snack water = new Snack("Water", 20, 2.75, 1);
+		Snack chips = new Snack("Chips", 36, 1.75, 1);
+		Snack chocolateBar = new Snack("Chocolate Bar", 36, 1.00, 1);
+		Snack pretzel = new Snack("Pretzel", 30, 2.00, 1);
+		Snack soda = new Snack("Soda", 24, 2.50, 2);
+		Snack water = new Snack("Water", 20, 2.75, 2);
 
 
-		// System.out.println(chips.name);
+		// System.out.println(jane.updateStatus());
+		// System.out.println(soda.updateStatus());
 	}
 	public static void main(String[] args)
 	{

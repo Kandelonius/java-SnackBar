@@ -39,4 +39,10 @@ public class Customer
 	{
 		this.cashOnHand = cashOnHand;
 	}
+
+	// other methods
+	public String updateStatus()
+	{
+		return "Customer "+this.getId()+" cash on hand = $"+this.getCashOnHand();
+	}
 }

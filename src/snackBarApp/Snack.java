@@ -63,4 +63,10 @@ public class Snack
 	{
 		this.quantity = quantity;
 	}
+
+	// other methods
+	public String updateStatus()
+	{
+		return "Quantity of snack "+this.getId()+" is "+this.getQuantity();
+	}
 }
