@@ -19,13 +19,13 @@ public class VendingMachine
 	{
 		return id;
 	}
-		public String getName()
+	public String getName()
 	{
 		return name;
 	}
-	
+
 	// setters
-		public void setName(String name)
+	public void setName(String name)
 	{
 		this.name = name;
 	}
