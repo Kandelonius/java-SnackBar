@@ -10,7 +10,7 @@ public class Snack
 	private double cost;
 	private int vendingMachineId;
 
-	public Snack(String name)
+	public Snack(String name, int quantity, double cost, int vendingMachineId)
 	{
 		maxId++;// creating a new snack will incriment this number
 		id = maxId;// will assign current max id to snack's id
