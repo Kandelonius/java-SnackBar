@@ -69,4 +69,5 @@ public class Snack
 	{
 		return "Quantity of snack "+this.getId()+" is "+this.getQuantity();
 	}
+	
 }

@@ -45,4 +45,8 @@ public class Customer
 	{
 		return "Customer "+this.getId()+" cash on hand = $"+this.getCashOnHand();
 	}
+	// public boolean spendMoney()
+	// {
+	// 	return 
+	// }
 }
