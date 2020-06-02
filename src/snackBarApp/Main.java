@@ -25,17 +25,34 @@ public class Main
 
 		jane.setCashOnHand(jane.getCashOnHand() - soda.getCost() * 3);
 		soda.setQuantity(soda.getQuantity() - 3);
-		System.out.println("/n"+ jane.updateStatus());
-		System.out.println(soda.updateStatus());
+		System.out.println(jane.updateStatus());
+		System.out.println(soda.updateStatus()+ "\r\n");
+
 		jane.setCashOnHand(jane.getCashOnHand() - pretzel.getCost() * 1);
 		pretzel.setQuantity(pretzel.getQuantity() - 1);
-		System.out.println("/n"+ jane.updateStatus());
-		System.out.println(pretzel.updateStatus());
-		bob.setCashOnHand(bob.getCashOnHand() - soda.getCost() * 4);
-		soda.setQuantity(soda.getQuantity() - 3);
-		System.out.println("/n"+ bob.updateStatus());
-		System.out.println(soda.updateStatus());
+		System.out.println(jane.updateStatus());
+		System.out.println(pretzel.updateStatus()+ "\r\n");
 
+		bob.setCashOnHand(bob.getCashOnHand() - soda.getCost() * 2);
+		soda.setQuantity(soda.getQuantity() - 2);
+		System.out.println(bob.updateStatus());
+		System.out.println(soda.updateStatus()+ "\r\n");
+
+		jane.setCashOnHand(jane.getCashOnHand() + 10.00);
+		System.out.println(jane.updateStatus()+ "\r\n");
+
+		jane.setCashOnHand(jane.getCashOnHand() - chocolateBar.getCost() * 1);
+		chocolateBar.setQuantity(chocolateBar.getQuantity() - 1);
+		System.out.println(jane.updateStatus());
+		System.out.println(chocolateBar.updateStatus()+ "\r\n");
+
+		pretzel.setQuantity(pretzel.getQuantity() + 12);
+		System.out.println(pretzel.updateStatus()+ "\r\n");
+
+		bob.setCashOnHand(bob.getCashOnHand() - pretzel.getCost() * 3);
+		pretzel.setQuantity(pretzel.getQuantity() - 3);
+		System.out.println(bob.updateStatus());
+		System.out.println(pretzel.updateStatus());
 		// jane.updateStatus();
 		// soda.updateStatus();
 		// purchaseSnacks(jane, soda, jane.getCashOnHand(), soda.getCost(), soda.getQuantity(), 3);
