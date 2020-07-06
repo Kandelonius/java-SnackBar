@@ -8,8 +8,21 @@ public class Main
 		System.out.println("Snack: "+snack.getName());
 		System.out.println("Vending Machine: "+vend.getName());
 		System.out.println("Quantity: "+snack.getQuantity());
-		System.out.println("Total Cost: $"+snack.getQuantity() * snack.getCost());
+		System.out.println("Total Cost: $"+snack.getQuantity() * snack.getCost()+ "\r\n");
 	}
+
+	private static void purchaseSnacks(Customer customer, Snack snack, int multiplier, boolean more)
+	{
+		customer.setCashOnHand(customer.getCashOnHand() - snack.getCost() * multiplier);
+		snack.setQuantity(snack.getQuantity() - 3);
+		if(more)
+		{
+			System.out.println(customer.updateStatus()+"\n"+snack.updateStatus()
+				+ "\r\n");
+		}
+	}
+
+
 
 	private static void vendForCustomers()
 	{
@@ -31,36 +44,50 @@ public class Main
 		Snack soda = new Snack("Soda", 24, 2.50, 2);
 		Snack water = new Snack("Water", 20, 2.75, 2);
 
-		jane.setCashOnHand(jane.getCashOnHand() - soda.getCost() * 3);
-		soda.setQuantity(soda.getQuantity() - 3);
-		System.out.println(jane.updateStatus());
-		System.out.println(soda.updateStatus()+ "\r\n");
-
-		jane.setCashOnHand(jane.getCashOnHand() - pretzel.getCost() * 1);
-		pretzel.setQuantity(pretzel.getQuantity() - 1);
-		System.out.println(jane.updateStatus());
-		System.out.println(pretzel.updateStatus()+ "\r\n");
-
-		bob.setCashOnHand(bob.getCashOnHand() - soda.getCost() * 2);
-		soda.setQuantity(soda.getQuantity() - 2);
-		System.out.println(bob.updateStatus());
-		System.out.println(soda.updateStatus()+ "\r\n");
+		purchaseSnacks(jane, soda, 3, true);
+		purchaseSnacks(jane, pretzel, 1, true);
+		purchaseSnacks(bob, soda, 2, true);
 
 		jane.setCashOnHand(jane.getCashOnHand() + 10.00);
 		System.out.println(jane.updateStatus()+ "\r\n");
 
-		jane.setCashOnHand(jane.getCashOnHand() - chocolateBar.getCost() * 1);
-		chocolateBar.setQuantity(chocolateBar.getQuantity() - 1);
-		System.out.println(jane.updateStatus());
-		System.out.println(chocolateBar.updateStatus()+ "\r\n");
+		purchaseSnacks(jane, chocolateBar, 1, true);
 
 		pretzel.setQuantity(pretzel.getQuantity() + 12);
 		System.out.println(pretzel.updateStatus()+ "\r\n");
+		
+		purchaseSnacks(bob, pretzel, 3, true);
 
-		bob.setCashOnHand(bob.getCashOnHand() - pretzel.getCost() * 3);
-		pretzel.setQuantity(pretzel.getQuantity() - 3);
-		System.out.println(bob.updateStatus());
-		System.out.println(pretzel.updateStatus());
+		// jane.setCashOnHand(jane.getCashOnHand() - soda.getCost() * 3);
+		// soda.setQuantity(soda.getQuantity() - 3);
+		// System.out.println(jane.updateStatus());
+		// System.out.println(soda.updateStatus()+ "\r\n");
+
+		// jane.setCashOnHand(jane.getCashOnHand() - pretzel.getCost() * 1);
+		// pretzel.setQuantity(pretzel.getQuantity() - 1);
+		// System.out.println(jane.updateStatus());
+		// System.out.println(pretzel.updateStatus()+ "\r\n");
+
+		// bob.setCashOnHand(bob.getCashOnHand() - soda.getCost() * 2);
+		// soda.setQuantity(soda.getQuantity() - 2);
+		// System.out.println(bob.updateStatus());
+		// System.out.println(soda.updateStatus()+ "\r\n");
+
+		// jane.setCashOnHand(jane.getCashOnHand() + 10.00);
+		// System.out.println(jane.updateStatus()+ "\r\n");
+
+		// jane.setCashOnHand(jane.getCashOnHand() - chocolateBar.getCost() * 1);
+		// chocolateBar.setQuantity(chocolateBar.getQuantity() - 1);
+		// System.out.println(jane.updateStatus());
+		// System.out.println(chocolateBar.updateStatus()+ "\r\n");
+
+		// pretzel.setQuantity(pretzel.getQuantity() + 12);
+		// System.out.println(pretzel.updateStatus()+ "\r\n");
+
+		// bob.setCashOnHand(bob.getCashOnHand() - pretzel.getCost() * 3);
+		// pretzel.setQuantity(pretzel.getQuantity() - 3);
+		// System.out.println(bob.updateStatus());
+		// System.out.println(pretzel.updateStatus());
 
 		printInfo(chips, food);
 		printInfo(chocolateBar, food);
