@@ -3,6 +3,14 @@ package snackBarApp;
 public class Main
 {
 	
+	private static void printInfo(Snack snack, VendingMachine vend)
+	{
+		System.out.println("Snack: "+snack.getName());
+		System.out.println("Vending Machine: "+vend.getName());
+		System.out.println("Quantity: "+snack.getQuantity());
+		System.out.println("Total Cost: $"+snack.getQuantity() * snack.getCost());
+	}
+
 	private static void vendForCustomers()
 	{
 		//Customer(String name, double cashOnHand)
@@ -53,6 +61,13 @@ public class Main
 		pretzel.setQuantity(pretzel.getQuantity() - 3);
 		System.out.println(bob.updateStatus());
 		System.out.println(pretzel.updateStatus());
+
+		printInfo(chips, food);
+		printInfo(chocolateBar, food);
+		printInfo(pretzel, food);
+		printInfo(soda, drink);
+		printInfo(water, drink);
+
 		// jane.updateStatus();
 		// soda.updateStatus();
 		// purchaseSnacks(jane, soda, jane.getCashOnHand(), soda.getCost(), soda.getQuantity(), 3);
